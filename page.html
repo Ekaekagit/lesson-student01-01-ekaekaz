@@ -31,6 +31,7 @@
     }
     h1 { margin-top: 0; }
     code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; }
+    button { font: inherit; padding: 8px 16px; border-radius: 6px; border: 1px solid var(--muted); background: var(--code-bg); color: var(--text); cursor: pointer; }
     footer { margin-top: 40px; font-size: 0.9em; color: var(--muted); }
   </style>
 </head>
@@ -45,9 +46,18 @@
       <li>Второй пункт</li>
       <li>Третий пункт</li>
     </ul>
+    <p><button id="counter" type="button">Нажато: 0</button></p>
   </main>
   <footer>
     <p>Создано для GitHub Classroom.</p>
   </footer>
+  <script>
+    let clicks = 0;
+    const button = document.getElementById('counter');
+    button.addEventListener('click', () => {
+      clicks += 1;
+      button.textContent = 'Нажато: ' + clicks;
+    });
+  </script>
 </body>
 </html>
